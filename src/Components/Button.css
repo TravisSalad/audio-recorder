@@ -1,0 +1,10 @@
+.button {
+    font-size: inherit;
+    cursor: pointer;
+    border: none;
+    margin: .5rem;
+}
+
+.button:hover {
+    color: gray;
+}

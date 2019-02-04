@@ -1,0 +1,11 @@
+.audio-player__wrapper {
+    margin: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.audio-player {
+    margin: 0 1rem;
+}
