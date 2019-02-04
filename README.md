@@ -1,6 +1,4 @@
-## Audio Recorded APP
-
-This app uses firebase for storage and requires a .env file that matches the .env-example.
+## Audio Recorder APP
 
 ### `npm start`
 
