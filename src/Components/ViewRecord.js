@@ -108,7 +108,6 @@ export default class ViewRecord extends React.Component {
                         isRecording={status === statusTypes.recording}
                     />
                     <div>{this.renderStatus()}</div>
-                    {/* {status === statusTypes.recording && <RuntimeTimer />} */}
                 </div>
                 {this.renderRecordings()}
             </div>

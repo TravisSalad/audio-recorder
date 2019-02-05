@@ -62,10 +62,12 @@ export async function create(path, file, dataObj) {
  * @param {object} dataObj the data object to be updated.
  * @param {function} cb callback function; called on success.
  */
-export function update(path, dataObj, cb) {
-    database.ref(path).update(dataObj)
-    .then(cb)
-    .catch(handleErr);
+export async function update(path, dataObj, cb) {
+    try {
+        await database.ref(path).update(dataObj);
+    } catch(err) {
+        handleErr(err);
+    }
 }
 
 /**

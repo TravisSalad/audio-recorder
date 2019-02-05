@@ -23,7 +23,7 @@ export function saveRecording(id, file, data = {}) {
     }
 }
 
-// removes the recording file from firebase storage and removes related date in firebase DB.
+// removes the recording file from firebase storage and removes related data in firebase DB.
 export function deleteRecording(id) {
     const path = `${Constants.paths.recordings}/${id}`;
     return async (dispatch) => {

@@ -1,8 +1,11 @@
 import React from 'react';
-
-const interval = 1000;
+import { formatTime }  from '../Utils/TimeMethods';
 
 export default class RuntimeTimer extends React.PureComponent {
+    static defaultProps = {
+        interval: 1000
+    }
+
     constructor(props) {
         super(props);
         this.state = { time: 0 }
@@ -10,7 +13,7 @@ export default class RuntimeTimer extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.timer = window.setInterval(this.incrementTime, interval);
+        this.timer = window.setInterval(this.incrementTime, this.props.interval);
     }
 
     componentWillUnmount() {
@@ -18,17 +21,10 @@ export default class RuntimeTimer extends React.PureComponent {
     }
 
     incrementTime = () => {
-        this.setState({ time: this.state.time + interval });
-    }
-
-    formatTime = () => {
-        const { time } = this.state;
-        const minutes = String(Math.floor(time / 60000)).padStart(2, "0");
-        const seconds = String((time % 60000) / 1000).padStart(2, "0");
-        return `${minutes}:${seconds}`;
+        this.setState({ time: this.state.time + this.props.interval });
     }
 
     render() {
-        return <span>{this.formatTime()}</span>;
+        return <span>{formatTime(this.state.time)}</span>;
     }
 }
